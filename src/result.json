@@ -1,0 +1,104 @@
+{
+    "status": "success",
+    "payments": [
+        {
+            "payedDate": null,
+            "invoiceNumber": "FAC1610",
+            "sentDate": "2021-10-06",
+            "maxDaysToPay": 30,
+            "amount": "243000",
+            "discount": {
+                "rate": 15,
+                "maxDaysToPay": 20
+            },
+            "multiPaymentStatus": "AVAILABLE"
+        },
+        {
+            "payedDate": "2021-10-01",
+            "invoiceNumber": "FAC1611",
+            "sentDate": "2021-09-28",
+            "maxDaysToPay": 30,
+            "amount": "270000",
+            "discount": {
+                "rate": 10,
+                "maxDaysToPay": 7
+            },
+            "multiPaymentStatus": "NONE"
+        },
+        {
+            "payedDate": null,
+            "invoiceNumber": "FAC1612",
+            "sentDate": "2021-10-06",
+            "maxDaysToPay": 30,
+            "amount": "360000",
+            "discount": {
+                "rate": 10,
+                "maxDaysToPay": 25
+            },
+            "multiPaymentStatus": "NONE"
+        },
+        {
+            "payedDate": null,
+            "invoiceNumber": "FAC1613",
+            "sentDate": "2021-09-28",
+            "maxDaysToPay": 30,
+            "amount": "135000",
+            "discount": {
+                "rate": 5,
+                "maxDaysToPay": 3
+            },
+            "multiPaymentStatus": "NONE"
+        },
+        {
+            "payedDate": "2021-10-01",
+            "invoiceNumber": "FAC1614",
+            "sentDate": "2021-09-28",
+            "maxDaysToPay": 30,
+            "amount": "730000",
+            "discount": null,
+            "multiPaymentStatus": "NONE"
+        },
+        {
+            "payedDate": "2021-10-03",
+            "invoiceNumber": "FAC1615",
+            "sentDate": "2021-09-28",
+            "maxDaysToPay": 30,
+            "amount": "150000",
+            "discount": null,
+            "multiPaymentStatus": "USED"
+        },
+        {
+            "payedDate": "2021-09-15",
+            "invoiceNumber": "FAC1617",
+            "sentDate": "2021-09-05",
+            "maxDaysToPay": 15,
+            "amount": "200500",
+            "discount": {
+                "rate": 10,
+                "maxDaysToPay": 30
+            },
+            "multiPaymentStatus": "USED"
+        },
+        {
+            "payedDate": "2021-09-10",
+            "invoiceNumber": "FAC1618",
+            "sentDate": "2021-09-02",
+            "maxDaysToPay": 15,
+            "amount": "20000",
+            "discount": {
+                "rate": 10,
+                "maxDaysToPay": 3
+            },
+            "multiPaymentStatus": "USED"
+        },
+        {
+            "payedDate": null,
+            "invoiceNumber": "FAC1616",
+            "sentDate": "2021-09-28",
+            "maxDaysToPay": 30,
+            "amount": "70000",
+            "discount": null,
+            "multiPaymentStatus": "AVAILABLE"
+        }
+    ]
+}

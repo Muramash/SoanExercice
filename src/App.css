@@ -13,6 +13,11 @@
   }
 }
 
+@font-face {
+    font-family: "Poppins";
+    src: url("./font/Poppins-SemiBold.ttf");
+   }
+   
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -25,14 +30,70 @@
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+main{
+    background-color: #E7E7E7;
+}
+
+html{
+    background-color: #E7E7E7;
+}
+
+.menuCol{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:5em;
+}
+
+.menuRow{
+    width: 100%;
+    padding: 1em;
+}
+
+.menuLink::after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #000;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
   }
-  to {
-    transform: rotate(360deg);
-  }
+  
+.menuLink:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.menuLink {
+    font-family: 'Poppins';
+    font-size: 14px;
+    text-decoration: none;
+    color: #000;
+    position: relative;
+    padding: 5px;
+    transition: 0.2s;
+}
+  
+.menuLink:hover {
+    color: #000;
+}
+
+.boxCol{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxRow{
+    width: 100%;
+    padding: 1em;
 }

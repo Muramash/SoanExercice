@@ -13,25 +13,25 @@ export default function App() {
   return (
     <Router>
     <main>
-      <Container>
-        <Row>
-              <Col>
-                  <Link to="/">Home</Link>
+      <Container className="menuCol">
+
+        <Row className="menuRow">
+              <Col xs={6} md={3}>
+                  <Link className='menuLink' to="/topay">Factures à payer</Link>
               </Col>
-              <Col>
-                  <Link to="/paid">Paid</Link>
-              </Col>
-              <Col>
-                  <Link to="/topay">To Pay</Link>
+              <Col xs={6} md={3}>
+                  <Link className='menuLink' to="/paid">Factures payées</Link>
               </Col>
         </Row>
-      </Container>
+        </Container>
 
-      <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/paid" element={<Paid />} />
-        <Route path="/topay" element={<ToPay />} />
-      </Routes>
+        <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="/paid" element={<Paid />} />
+            <Route path="/topay" element={<ToPay />} />
+        </Routes>
+
+
     </main>
     </Router>
   )
@@ -39,22 +39,18 @@ export default function App() {
 // Home Page
 const Home = () => (
   <Fragment>
-    <h1>Home</h1>
-    <FakeText />
-  </Fragment>
-)
-// About Page
-const About = () => (
-  <Fragment>
-    <h1>About</h1>
-    <FakeText />
-  </Fragment>
-)
-// Contact Page
-const Contact = () => (
-  <Fragment>
-    <h1>Contact</h1>
-    <FakeText />
+        <Container className="boxCol">
+
+            <Row className="boxRow">
+                <Col>
+                    <h1>Home</h1>
+                    <FakeText />
+                </Col>
+            </Row>
+
+        </Container>
+
+
   </Fragment>
 )
 
