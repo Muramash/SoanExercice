@@ -17,6 +17,21 @@
     font-family: "Poppins";
     src: url("./font/Poppins-SemiBold.ttf");
    }
+
+@font-face {
+    font-family: "Roboto-bold";
+    src: url("./font/Roboto-Bold.ttf");
+   }
+
+@font-face {
+    font-family: "Roboto-italic";
+    src: url("./font/Roboto-Italic.ttf");
+   }
+
+  @font-face {
+    font-family: "Roboto-regular";
+    src: url("./font/Roboto-Regular.ttf");
+   }
    
 .App-header {
   background-color: #282c34;
@@ -85,15 +100,90 @@ html{
 .menuLink:hover {
     color: #000;
 }
+.menuLink:active {
+    color: #878787;
+}
 
-.boxCol{
+
+.boxContainer{
     background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.boxContainer:hover{
+    background-color: #DEDEDE;
+}
 
 .boxRow{
     width: 100%;
     padding: 1em;
+}
+
+.dashedPrice{
+    color: #02130E;
+    font-family: 'Roboto-regular';
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+.regularText{
+    color: #02130E;
+    font-family: 'Roboto-bold';
+    font-size: 14px;
+}
+
+.subtitleText{
+    font-family: 'Roboto-italic';
+    font-size: 12px;
+    color: #ABB0AF;
+}
+
+.subtitleText_green{
+    font-family: 'Roboto-italic';
+    font-size: 12px;
+    color: #10BC91;
+}
+
+.subtitleBlock{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.subtitleBottom{
+    font-family: 'Roboto-italic';
+    font-size: 12px;
+    color: #02130E;
+    text-align: center;
+    padding: 1em;
+}
+
+.lockSVG{
+    max-width: 16.15px;
+}
+
+.boltSVG{
+    max-width: 15px;
+}
+
+.formAdjust{
+    width: 100%;
+}
+
+.validationBox{
+    background-color: #fff;
+    padding: 1em;
+    display: flex;
+    justify-content: end;
+}
+
+.buttonStyle{
+    background-color: #10BC91!important;
+    border-color: #10BC91!important;
+}
+
+.buttonStyleOff{
+    background-color: grey!important;
+    border-color: grey!important;
 }

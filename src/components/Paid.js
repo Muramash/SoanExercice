@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from "react";
 import { Container, Row, Col } from 'react-bootstrap';
+import bolt from './../img/lightning-svgrepo-com.svg'
 
-import cors from 'cors';
-import axios from 'axios';
+// import cors from 'cors';
+// import axios from 'axios';
 import jsonData from './../result.json'
 
 export const Payment = () => {
@@ -36,7 +37,6 @@ class Paid extends Component {
       
       
     componentDidMount() {
-        let tempArray = [];
         //   axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
         //   axios.get('https://app.soan-solutions.io/test_front/datas', {
@@ -62,6 +62,7 @@ class Paid extends Component {
       }
 
     render() {
+        console.log("test: ",jsonData.payments)
         let allPaidList = []
         jsonData.payments.forEach(e => {
             if(e.payedDate != null){
@@ -69,27 +70,70 @@ class Paid extends Component {
             }
         })
 
-        console.log("here lfdsqf : ", allPaidList)
+        console.log("here paid : ", allPaidList)
         
         return (
-            <Container className="boxCol">
-                <Row className="boxRow">
-                {allPaidList && allPaidList.map((payment,i) => {
+            <Fragment>
+
+            {allPaidList && allPaidList.map((payment,i) => {
+
+                let fullCases = false;
+                let discountToReduce = ""
+                let discountedPrice = ""
+
+                if(payment.multiPaymentStatus === "USED" && payment.discount != null) fullCases = true;
+
+                if(payment.discount != null){
+                    discountToReduce = (payment.amount /100) * (payment.discount.rate / 100)
+                    discountedPrice = (payment.amount/100) - discountToReduce
+                }
+
                     return(
-                        <Fragment>
-                            <Col key={i}>
-                            {payment.invoiceNumber}
-                            {payment.payedDate}
-                            </Col>
-                        </Fragment>
+                        <Container key={i} className="boxContainer">
+                            <Row className="boxRow">
+                                <Col>
+                                <span className="regularText">{payment.invoiceNumber}</span><br/>
+                                <span className="subtitleText">Réglée le {payment.payedDate}</span>
+                                </Col>
+                                <Col>
+                                {fullCases &&
+                                <>
+                                    <img className="boltSVG" src={bolt}/> <span className="regularText">3x et Escompte</span><br/>
+                                </>
+
+                                }
+                                {payment.multiPaymentStatus === "USED" && !fullCases &&
+                                <>
+                                    <img className="boltSVG" src={bolt}/>  <span className="regularText">3x sans frais</span><br/>
+                                </>
+                                }
+                                {payment.multiPaymentStatus === "NONE" && payment.discount != null && !fullCases &&
+                                <>
+                                    <img className="boltSVG" src={bolt}/> <span className="regularText">Escompte</span><br/>                                    
+                                </>
+                                }
+                                {payment.multiPaymentStatus === "USED" &&
+                                    <span className="subtitleText_green">Appliqué</span>
+                                }
+                                </Col>
+                                <Col>
+                                {payment.discount == null && 
+                                <span className="regularText"> { parseFloat(payment.amount) / 100 } €</span>
+                                } 
+                                {payment.discount != null && 
+                                <>
+                                    <span className="regularText"> { discountedPrice } €</span><br/>
+                                    <span className="dashedPrice"> {parseFloat(payment.amount) / 100 } € </span>
+                                </>
+                                } 
+                                </Col>
+                            </Row>
+                        </Container>
                     )
                 })}
 
+            </Fragment>
 
-
-                </Row>
-
-            </Container>
         );
     }
 

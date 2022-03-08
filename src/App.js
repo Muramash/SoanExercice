@@ -3,6 +3,7 @@ import './App.css';
 import React, { Fragment } from "react"
 import Paid from "./components/Paid.js"
 import ToPay from "./components/ToPay.js"
+import lock from "./img/lock_black_24dp.svg"
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import { Container, Row, Col } from 'react-bootstrap';
@@ -31,7 +32,13 @@ export default function App() {
             <Route path="/topay" element={<ToPay />} />
         </Routes>
 
-
+        <Container>
+            <Row>
+                <Col className="subtitleBlock">
+                    <img className="lockSVG" src={lock}/><span className="subtitleBottom">Paiement en ligne 100 % sécurisé</span>
+                </Col>
+            </Row>
+        </Container>
     </main>
     </Router>
   )
