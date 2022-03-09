@@ -81,6 +81,11 @@ class Paid extends Component {
                 let discountToReduce = ""
                 let discountedPrice = ""
 
+                let formatDateArray = payment.payedDate.split('-')
+                let formatedDate = formatDateArray[2]+"/"+formatDateArray[1]+"/"+formatDateArray[0];
+
+                console.log(formatedDate);
+
                 if(payment.multiPaymentStatus === "USED" && payment.discount != null) fullCases = true;
 
                 if(payment.discount != null){
@@ -93,7 +98,7 @@ class Paid extends Component {
                             <Row className="boxRow">
                                 <Col>
                                 <span className="regularText">{payment.invoiceNumber}</span><br/>
-                                <span className="subtitleText">Réglée le {payment.payedDate}</span>
+                                <span className="subtitleText">Réglée le {formatedDate}</span>
                                 </Col>
                                 <Col>
                                 {fullCases &&
@@ -131,6 +136,8 @@ class Paid extends Component {
                         </Container>
                     )
                 })}
+
+
 
             </Fragment>
 
