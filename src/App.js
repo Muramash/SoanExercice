@@ -26,7 +26,7 @@ export default function App() {
         </Container>
 
         <Routes>
-            <Route path="/" exact element={<Home />} />
+            <Route path="/" exact element={<ToPay />} />
             <Route path="/paid" element={<Paid />} />
             <Route path="/topay" element={<ToPay />} />
         </Routes>
@@ -34,31 +34,3 @@ export default function App() {
     </Router>
   )
 }
-// Home Page
-const Home = () => (
-  <Fragment>
-        <Container className="boxCol">
-
-            <Row className="boxRow">
-                <Col>
-                    <h1>Home</h1>
-                    <FakeText />
-                </Col>
-            </Row>
-
-        </Container>
-
-
-  </Fragment>
-)
-
-const FakeText = () => (
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-)
