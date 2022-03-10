@@ -247,7 +247,6 @@ html{
     color: #212529!important;
     font-size: 12px!important;
     font-family: Roboto-italic;
-    padding: 0.7em!important;
     display: flex;
     justify-content: space-between;
 }
@@ -284,4 +283,12 @@ html{
 
 .redText{
     color: #E1280C;
+}
+
+.css-1s2u09g-control{
+    width: 100%!important;
+}
+
+.css-1pahdxg-control{
+    width: 100%!important;
 }
